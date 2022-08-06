@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sweepstakes', function (Blueprint $table) {
-            $table->uuid()->primary();
+            $table->uuid('id')->primary();
             $table->foreignId('user_id')->constrained();
             $table->integer('number_of_winners')->default(1);
             $table->dateTime('end_date')->nullable();
